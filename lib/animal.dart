@@ -1,7 +1,5 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:flutter/foundation.dart';
-
 class Animal {
   final String name;
   final String especie;

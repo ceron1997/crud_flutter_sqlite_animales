@@ -35,10 +35,8 @@ class DB {
       path,
       version: 1,
       onCreate: (db, version) async {
-        //
         await db.execute(
             'CREATE TABLE $tableName ($columnId INTEGER PRIMARY KEY, $columnName TEXT, $columnSpec TEXT)');
-        //
       },
     );
   }
@@ -51,15 +49,12 @@ class DB {
     List<Map<String, Object?>> result =
         await _database.query(tableName, orderBy: columnName);
     return result;
-    //
   }
 
   // Insert
   Future<int> insert_Animal(Animal animal) async {
-    //
     int rowsInserted = await _database.insert(tableName, animal.toMap());
     return rowsInserted;
-    //
   }
 
   // Update

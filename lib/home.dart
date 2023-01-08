@@ -20,19 +20,15 @@ class _HomePageState extends State<HomePage> {
 
   // getData from DATABASE
   getDataFromDb() async {
-    //
     await _myDatabase.initializeDatabase();
     List<Map<String, Object?>> map = await _myDatabase.getEmpList();
     for (int i = 0; i < map.length; i++) {
-      //
       animales.add(Animal.toEmp(map[i]));
-      //
     }
     count = await _myDatabase.count_Animal();
     setState(() {
       isLoading = false;
     });
-    //
   }
 
   @override
